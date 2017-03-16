@@ -63,7 +63,8 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
     }
     
     func shareImagefrom(userQuote:UserQuote){
-        let quoteView = QuoteView(frame: CGRect(x: 0, y: 0, width: 500, height: 250))
+        let quoteView = QuoteView(frame: CGRect(x: 0, y: 0, width: 667 , height: 375))
+        quoteView.configureWith(userQuote: userQuote)
         UIGraphicsBeginImageContext(quoteView.bounds.size)
         quoteView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let imageToShare = UIGraphicsGetImageFromCurrentImageContext()

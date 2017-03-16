@@ -60,6 +60,7 @@ class QuoteView: UIView {
     func configureWith(userQuote: UserQuote){
         quoteLabel.text = userQuote.quote.text
         authorNameLabel.text = userQuote.quote.author
+        authorNameLabel.sizeToFit()
         quoteImageView.image = userQuote.photo.image
         
     }
