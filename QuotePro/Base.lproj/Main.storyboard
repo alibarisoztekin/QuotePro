@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="667" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sMU-00-Zta" id="lEv-nG-Vag">
-                                    <rect key="frame" x="0.0" y="0.0" width="667" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -101,7 +101,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="changeImageButton" destination="AUh-QS-6sY" id="rGr-w9-Jxk"/>
+                        <outlet property="changeQuoteButton" destination="XRV-ur-HT0" id="K7r-sZ-GUM"/>
                         <outlet property="quoteView" destination="jgJ-al-clk" id="qRU-QZ-GzL"/>
+                        <outlet property="saveButton" destination="5Ka-VY-0Z3" id="5pQ-A6-aIw"/>
                         <outlet property="viewForQuoteView" destination="jgJ-al-clk" id="RCF-mI-rQZ"/>
                     </connections>
                 </viewController>
@@ -109,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="3086.8065967016496" y="-407.19999999999999"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="wC5-W1-oj0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="1Fe-7R-V0W" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="1Fe-7R-V0W" customClass="NavigationViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8nS-Fs-C7C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

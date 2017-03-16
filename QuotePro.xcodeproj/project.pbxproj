@@ -17,6 +17,7 @@
 		E16EF4E31E79D039003A56EB /* QuoteBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16EF4E21E79D039003A56EB /* QuoteBuilderViewController.swift */; };
 		E16EF4E51E79D264003A56EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16EF4E41E79D264003A56EB /* NetworkManager.swift */; };
 		E16EF4E71E79D309003A56EB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16EF4E61E79D309003A56EB /* MasterViewController.swift */; };
+		E1E629A71E7B14D10077F130 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E629A61E7B14D10077F130 /* NavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E16EF4E21E79D039003A56EB /* QuoteBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteBuilderViewController.swift; sourceTree = "<group>"; };
 		E16EF4E41E79D264003A56EB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E16EF4E61E79D309003A56EB /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		E1E629A61E7B14D10077F130 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				E16EF4D11E79C8AF003A56EB /* Assets.xcassets */,
 				E16EF4D31E79C8AF003A56EB /* LaunchScreen.storyboard */,
 				E16EF4D61E79C8AF003A56EB /* Info.plist */,
+				E1E629A61E7B14D10077F130 /* NavigationViewController.swift */,
 			);
 			path = QuotePro;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				E16EF4E71E79D309003A56EB /* MasterViewController.swift in Sources */,
 				E16EF4E51E79D264003A56EB /* NetworkManager.swift in Sources */,
 				E16EF4DF1E79C912003A56EB /* QuoteView.swift in Sources */,
+				E1E629A71E7B14D10077F130 /* NavigationViewController.swift in Sources */,
 				E16EF4CB1E79C8AF003A56EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

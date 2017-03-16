@@ -18,19 +18,19 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        DispatchQueue.main.async {
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        }
+    }
+        
+        
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return userQuoteArray.count
     }
 
@@ -45,7 +45,10 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
         return cell
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! QuoteBuilderViewController
+        destinationVC.userQuoteDelegate = self
+    }
 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -58,6 +61,6 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
         userQuoteArray.append(userQuote)
     }
 
-    
+
 
 }

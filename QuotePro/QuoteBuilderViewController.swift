@@ -14,6 +14,9 @@ protocol UserQuoteDelegate {
 
 class QuoteBuilderViewController: UIViewController {
 
+    @IBOutlet weak var changeQuoteButton: UIButton!
+    @IBOutlet weak var changeImageButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var viewForQuoteView: UIView!
     var userQuoteDelegate: UserQuoteDelegate!
     var quoteView: QuoteView!
@@ -22,32 +25,31 @@ class QuoteBuilderViewController: UIViewController {
         super.viewDidLoad()
         quoteView = QuoteView(frame: viewForQuoteView.bounds)
         quoteView.configureWithRandomQuoteAndImage()
-        viewForQuoteView.addSubview(quoteView)
         
-        // Do any additional setup after loading the view.
-    }
+        viewForQuoteView.addSubview(quoteView)
+        quoteView.addSubview(changeImageButton)
+        quoteView.addSubview(changeQuoteButton)
+        quoteView.addSubview(saveButton)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-        return UIInterfaceOrientationMask.landscapeRight
-    }
-    /*
-    // MARK: - Navigation
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        DispatchQueue.main.async {
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    
+    
     @IBAction func saveTapped(_ sender: UIButton) {
         
         let userQuote = UserQuote(quote: quoteView.quote, photo: quoteView.photo)
         userQuoteDelegate.addToArray(userQuote: userQuote)
+        dismiss(animated: true, completion: nil)
         
     }
     @IBAction func changeImage(_ sender: UIButton) {
@@ -58,5 +60,7 @@ class QuoteBuilderViewController: UIViewController {
         quoteView.changeQuote()
         
     }
+    
+
 
 }

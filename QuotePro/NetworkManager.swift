@@ -49,7 +49,8 @@ class NetworkManager: NSObject {
             }
             
 
-        let json = try! JSONSerialization.jsonObject(with: data, options:[]) as! Dictionary<String ,String>
+            guard let json = try? JSONSerialization.jsonObject(with: data, options:[]) as! Dictionary<String ,String> else{return}
+            
              let quote = Quote(text: json["quoteText"]! as String, author: json["quoteAuthor"]! as String)
             completionHandler(quote)
             
