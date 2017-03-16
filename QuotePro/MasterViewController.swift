@@ -21,7 +21,8 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.hidesBarsOnTap = false
         DispatchQueue.main.async {
             UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         }
@@ -38,10 +39,10 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let quoteView = QuoteView(frame: cell.contentView.bounds)
+        let quoteView = QuoteView(frame: cell.contentView.frame)
         quoteView.configureWith(userQuote: userQuoteArray[indexPath.row])
         cell.contentView.addSubview(quoteView)
-
+        
         return cell
     }
     
@@ -50,17 +51,27 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
         destinationVC.userQuoteDelegate = self
     }
 
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // uiactivityviewcontroller
-    }
  
-
 
     func addToArray(userQuote:UserQuote){
         userQuoteArray.append(userQuote)
+        tableView.reloadData()
     }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        shareImagefrom(userQuote: userQuoteArray[indexPath.row])
+        
+    }
+    
+    func shareImagefrom(userQuote:UserQuote){
+        let quoteView = QuoteView(frame: CGRect(x: 0, y: 0, width: 500, height: 250))
+        UIGraphicsBeginImageContext(quoteView.bounds.size)
+        quoteView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let imageToShare = UIGraphicsGetImageFromCurrentImageContext()
+        
+        let activityVC = UIActivityViewController.init(activityItems: [imageToShare!], applicationActivities: nil)
+        navigationController?.present(activityVC, animated: true, completion: nil)
+    }
+    
 
 
 }

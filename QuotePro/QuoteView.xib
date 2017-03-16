@@ -26,15 +26,15 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xMJ-LW-WXG">
                     <rect key="frame" x="-14" y="0.0" width="681" height="375"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1F-UM-mdL">
-                    <rect key="frame" x="293" y="135" width="68" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhu-5l-vDB">
+                    <rect key="frame" x="303" y="214.5" width="48" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhu-5l-vDB">
-                    <rect key="frame" x="300" y="213" width="53" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1F-UM-mdL">
+                    <rect key="frame" x="8" y="159" width="651" height="25.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -42,13 +42,14 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xMJ-LW-WXG" secondAttribute="bottom" id="BGa-fY-8Xt"/>
+                <constraint firstAttribute="trailing" secondItem="R1F-UM-mdL" secondAttribute="trailing" constant="8" id="DMS-fO-FYe"/>
                 <constraint firstItem="xMJ-LW-WXG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-14" id="G1b-VK-Q2T"/>
                 <constraint firstItem="mhu-5l-vDB" firstAttribute="centerX" secondItem="xMJ-LW-WXG" secondAttribute="centerX" id="Km4-Ws-GjT"/>
+                <constraint firstItem="R1F-UM-mdL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="LxM-Rd-eaw"/>
                 <constraint firstAttribute="trailing" secondItem="xMJ-LW-WXG" secondAttribute="trailing" id="OJu-ER-XB3"/>
                 <constraint firstItem="xMJ-LW-WXG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YB8-kP-G6e"/>
-                <constraint firstItem="R1F-UM-mdL" firstAttribute="centerY" secondItem="xMJ-LW-WXG" secondAttribute="centerY" multiplier="0.8" id="ZGN-MI-Kb4"/>
+                <constraint firstItem="mhu-5l-vDB" firstAttribute="top" secondItem="R1F-UM-mdL" secondAttribute="bottom" constant="30" id="Ztz-b3-WOf"/>
                 <constraint firstItem="mhu-5l-vDB" firstAttribute="centerY" secondItem="xMJ-LW-WXG" secondAttribute="centerY" multiplier="1.2" id="a4G-UQ-nBB"/>
-                <constraint firstItem="R1F-UM-mdL" firstAttribute="centerX" secondItem="xMJ-LW-WXG" secondAttribute="centerX" id="xiM-oj-kuD"/>
             </constraints>
             <point key="canvasLocation" x="75.5" y="-335.5"/>
         </view>

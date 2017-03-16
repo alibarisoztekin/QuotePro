@@ -12,7 +12,7 @@ class NetworkManager: NSObject {
 
     
     class func getRandomPhoto(completionHandler:@escaping(Photo) -> Void) {
-        let url = URL(string: "http://lorempixel.com/600/400/nature/")
+        let url = URL(string: "http://lorempixel.com/600/300/nature/")
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
                 print(error!)

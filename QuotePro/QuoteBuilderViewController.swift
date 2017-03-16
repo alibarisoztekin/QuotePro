@@ -27,9 +27,7 @@ class QuoteBuilderViewController: UIViewController {
         quoteView.configureWithRandomQuoteAndImage()
         
         viewForQuoteView.addSubview(quoteView)
-        quoteView.addSubview(changeImageButton)
-        quoteView.addSubview(changeQuoteButton)
-        quoteView.addSubview(saveButton)
+
 
         
     }
@@ -49,8 +47,7 @@ class QuoteBuilderViewController: UIViewController {
         
         let userQuote = UserQuote(quote: quoteView.quote, photo: quoteView.photo)
         userQuoteDelegate.addToArray(userQuote: userQuote)
-        dismiss(animated: true, completion: nil)
-        
+        navigationController?.popToRootViewController(animated: true)
     }
     @IBAction func changeImage(_ sender: UIButton) {
         quoteView.changePhoto()

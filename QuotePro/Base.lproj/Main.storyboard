@@ -6,23 +6,26 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller-->
+        <!--QuotePro-->
         <scene sceneID="5em-2o-Sxd">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="qjV-ia-JFw" customClass="MasterViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ii0-9u-FA8">
+                <tableViewController id="qjV-ia-JFw" customClass="MasterViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ii0-9u-FA8">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="sMU-00-Zta">
-                                <rect key="frame" x="0.0" y="28" width="667" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="667" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sMU-00-Zta" id="lEv-nG-Vag">
-                                    <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -32,7 +35,7 @@
                             <outlet property="delegate" destination="qjV-ia-JFw" id="50R-3Q-8R4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cSx-2Z-eW0">
+                    <navigationItem key="navigationItem" title="QuotePro" id="cSx-2Z-eW0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="c3x-VX-jTd">
                             <connections>
                                 <segue destination="iMd-q7-Bjy" kind="show" id="cde-IL-Emf"/>
@@ -57,47 +60,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgJ-al-clk">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRV-ur-HT0">
-                                        <rect key="frame" x="560" y="337" width="99" height="30"/>
-                                        <state key="normal" title="Change Quote"/>
-                                        <connections>
-                                            <action selector="changeQuote:" destination="iMd-q7-Bjy" eventType="touchUpInside" id="fIh-Gx-vjT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUh-QS-6sY">
-                                        <rect key="frame" x="8" y="337" width="99" height="30"/>
-                                        <state key="normal" title="Change Image"/>
-                                        <connections>
-                                            <action selector="changeImage:" destination="iMd-q7-Bjy" eventType="touchUpInside" id="oRF-yp-1aG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ka-VY-0Z3">
-                                        <rect key="frame" x="8" y="60" width="34" height="30"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="saveTapped:" destination="iMd-q7-Bjy" eventType="touchUpInside" id="LTg-8T-Bph"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="83" y="62.5" width="500" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="5Ka-VY-0Z3" firstAttribute="leading" secondItem="jgJ-al-clk" secondAttribute="leading" constant="8" id="IxY-Ou-LWt"/>
-                                    <constraint firstAttribute="trailing" secondItem="XRV-ur-HT0" secondAttribute="trailing" constant="8" id="Oay-5K-3yt"/>
-                                    <constraint firstItem="5Ka-VY-0Z3" firstAttribute="top" secondItem="jgJ-al-clk" secondAttribute="top" constant="60" id="Urx-ls-qgV"/>
-                                    <constraint firstAttribute="bottom" secondItem="XRV-ur-HT0" secondAttribute="bottom" constant="8" id="cwV-eC-SZv"/>
-                                    <constraint firstItem="AUh-QS-6sY" firstAttribute="leading" secondItem="jgJ-al-clk" secondAttribute="leading" constant="8" id="mh6-cS-7J2"/>
-                                    <constraint firstAttribute="bottom" secondItem="AUh-QS-6sY" secondAttribute="bottom" constant="8" id="xt7-0A-KXS"/>
+                                    <constraint firstAttribute="width" secondItem="jgJ-al-clk" secondAttribute="height" multiplier="2:1" id="rh2-cu-gTZ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRV-ur-HT0">
+                                <rect key="frame" x="548" y="337" width="99" height="30"/>
+                                <state key="normal" title="Change Quote"/>
+                                <connections>
+                                    <action selector="changeQuote:" destination="iMd-q7-Bjy" eventType="touchUpInside" id="fIh-Gx-vjT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ka-VY-0Z3">
+                                <rect key="frame" x="20" y="72" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="iMd-q7-Bjy" eventType="touchUpInside" id="LTg-8T-Bph"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUh-QS-6sY">
+                                <rect key="frame" x="20" y="337" width="99" height="30"/>
+                                <state key="normal" title="Change Image"/>
+                                <connections>
+                                    <action selector="changeImage:" destination="iMd-q7-Bjy" eventType="touchUpInside" id="oRF-yp-1aG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jgJ-al-clk" firstAttribute="top" secondItem="Ygf-mf-vq2" secondAttribute="top" id="PU2-BN-05q"/>
-                            <constraint firstItem="jgJ-al-clk" firstAttribute="leading" secondItem="Ygf-mf-vq2" secondAttribute="leading" id="ZBu-Jo-fQt"/>
-                            <constraint firstItem="Zkg-9D-Evm" firstAttribute="top" secondItem="jgJ-al-clk" secondAttribute="bottom" id="j39-fd-2sF"/>
-                            <constraint firstAttribute="trailing" secondItem="jgJ-al-clk" secondAttribute="trailing" id="wFN-yS-Lf6"/>
+                            <constraint firstItem="Zkg-9D-Evm" firstAttribute="top" secondItem="AUh-QS-6sY" secondAttribute="bottom" constant="8" id="03Y-cJ-1ww"/>
+                            <constraint firstItem="jgJ-al-clk" firstAttribute="centerX" secondItem="Ygf-mf-vq2" secondAttribute="centerX" id="4It-VS-iXS"/>
+                            <constraint firstItem="jgJ-al-clk" firstAttribute="width" secondItem="Ygf-mf-vq2" secondAttribute="width" multiplier="500/667" id="BFj-23-lJ3"/>
+                            <constraint firstItem="jgJ-al-clk" firstAttribute="height" secondItem="Ygf-mf-vq2" secondAttribute="height" multiplier="250/375" id="FRX-3Q-8n3"/>
+                            <constraint firstItem="jgJ-al-clk" firstAttribute="centerY" secondItem="Ygf-mf-vq2" secondAttribute="centerY" id="I7B-Fe-GlJ"/>
+                            <constraint firstItem="Zkg-9D-Evm" firstAttribute="top" secondItem="XRV-ur-HT0" secondAttribute="bottom" constant="8" id="K11-WI-yna"/>
+                            <constraint firstItem="XRV-ur-HT0" firstAttribute="trailing" secondItem="Ygf-mf-vq2" secondAttribute="trailingMargin" id="lMY-ZO-Jt2"/>
+                            <constraint firstItem="5Ka-VY-0Z3" firstAttribute="leading" secondItem="Ygf-mf-vq2" secondAttribute="leadingMargin" id="sHZ-eP-8Y1"/>
+                            <constraint firstItem="5Ka-VY-0Z3" firstAttribute="top" secondItem="lBL-cq-oaP" secondAttribute="bottom" constant="8" id="tJ7-D6-Ch6"/>
+                            <constraint firstItem="AUh-QS-6sY" firstAttribute="leading" secondItem="Ygf-mf-vq2" secondAttribute="leadingMargin" id="yV8-aU-ukN"/>
                         </constraints>
                     </view>
                     <connections>

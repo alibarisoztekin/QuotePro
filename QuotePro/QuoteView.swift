@@ -30,7 +30,7 @@ class QuoteView: UIView {
         setupView()
     }
     
-    func setupView() {
+    fileprivate func setupView() {
         let bundle = Bundle(for: type(of: self))
         UINib(nibName: "QuoteView", bundle: bundle).instantiate(withOwner: self, options: nil)
         
@@ -40,13 +40,19 @@ class QuoteView: UIView {
 
     func configureWithRandomQuoteAndImage()  {
         NetworkManager.getRandomQuote { quote in
-            self.quote = quote
-            self.quoteLabel.text = quote.text
-            self.authorNameLabel.text = quote.author
+            DispatchQueue.main.async {
+                self.quote = quote
+                self.quoteLabel.text = quote.text
+                self.authorNameLabel.text = quote.author
+            }
+
         }
+        
         NetworkManager.getRandomPhoto { photo in
-            self.photo = photo
-            self.quoteImageView.image = photo.image
+            DispatchQueue.main.async {
+                self.photo = photo
+                self.quoteImageView.image = photo.image
+            }
 
         }
 
@@ -59,17 +65,26 @@ class QuoteView: UIView {
     }
     func changeQuote () {
         NetworkManager.getRandomQuote { quote in
-            self.quote = quote
+            DispatchQueue.main.async {
+                self.quote = quote
+                self.quoteLabel.text = quote.text
+                self.authorNameLabel.text = quote.author
+            }
+
         }
-        quoteLabel.text = quote.text
-        authorNameLabel.text = quote.author
+
     }
     
     func changePhoto() {
         NetworkManager.getRandomPhoto { photo in
-            self.photo = photo
+
+            DispatchQueue.main.async {
+                self.photo = photo
+                self.quoteImageView.image = photo.image
+            }
+
+
         }
-        quoteImageView.image = photo.image
 
     }
     
