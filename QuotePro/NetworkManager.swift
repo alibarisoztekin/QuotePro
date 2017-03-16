@@ -1,4 +1,4 @@
-//
+ //
 //  NetworkManager.swift
 //  QuotePro
 //
@@ -11,14 +11,53 @@ import UIKit
 class NetworkManager: NSObject {
 
     
-    
-    func getRamdomPhoto() -> Photo {
+    class func getRandomPhoto(completionHandler:@escaping(Photo) -> Void) {
+        let url = URL(string: "http://lorempixel.com/600/400/nature/")
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("Data is empty")
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                print("couldn't image from data")
+                return
+            }
+            completionHandler(Photo(image: image))
+        }
         
-         
+        task.resume()
+
     }
     
-    func getRandomQuote() -> Quote{
+    class func getRandomQuote(completionHandler:@escaping(Quote) -> Void) {
+     
+        let url = URL(string: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json")
+
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("Data is empty")
+                return
+            }
+            
+
+        let json = try! JSONSerialization.jsonObject(with: data, options:[]) as! Dictionary<String ,String>
+             let quote = Quote(text: json["quoteText"]! as String, author: json["quoteAuthor"]! as String)
+            completionHandler(quote)
+            
+        }
         
+        
+        task.resume()
+
     }
     
 }
