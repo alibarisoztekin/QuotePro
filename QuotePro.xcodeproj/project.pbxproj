@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E16539271EA567B5001DC209 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16539261EA567B5001DC209 /* QuoteTableViewCell.swift */; };
 		E16EF4CB1E79C8AF003A56EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16EF4CA1E79C8AF003A56EB /* AppDelegate.swift */; };
 		E16EF4D01E79C8AF003A56EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16EF4CE1E79C8AF003A56EB /* Main.storyboard */; };
 		E16EF4D21E79C8AF003A56EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E16EF4D11E79C8AF003A56EB /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		03753D7205F941E6EFC325A3 /* Pods-QuotePro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuotePro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro.debug.xcconfig"; sourceTree = "<group>"; };
 		6C14C00CFCA0E9723555A49C /* Pods-QuotePro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuotePro.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro.release.xcconfig"; sourceTree = "<group>"; };
 		C8A882FE1E67551239BEDF63 /* Pods_QuotePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuotePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E16539261EA567B5001DC209 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
 		E16EF4C71E79C8AF003A56EB /* QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16EF4CA1E79C8AF003A56EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E16EF4CF1E79C8AF003A56EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				E16EF4CA1E79C8AF003A56EB /* AppDelegate.swift */,
 				E16EF4CE1E79C8AF003A56EB /* Main.storyboard */,
+				E16539261EA567B5001DC209 /* QuoteTableViewCell.swift */,
 				E16EF4E21E79D039003A56EB /* QuoteBuilderViewController.swift */,
 				E16EF4E61E79D309003A56EB /* MasterViewController.swift */,
 				E16EF4DC1E79C8C8003A56EB /* QuoteView.xib */,
@@ -232,6 +235,7 @@
 				E16EF4E11E79CE96003A56EB /* ModelClasses.swift in Sources */,
 				E16EF4E71E79D309003A56EB /* MasterViewController.swift in Sources */,
 				E16EF4E51E79D264003A56EB /* NetworkManager.swift in Sources */,
+				E16539271EA567B5001DC209 /* QuoteTableViewCell.swift in Sources */,
 				E16EF4DF1E79C912003A56EB /* QuoteView.swift in Sources */,
 				E1E629A71E7B14D10077F130 /* NavigationViewController.swift in Sources */,
 				E16EF4CB1E79C8AF003A56EB /* AppDelegate.swift in Sources */,

@@ -17,16 +17,16 @@ class QuoteBuilderViewController: UIViewController {
     @IBOutlet weak var changeQuoteButton: UIButton!
     @IBOutlet weak var changeImageButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var viewForQuoteView: UIView!
+    @IBOutlet weak var builderView: UIView!
     var userQuoteDelegate: UserQuoteDelegate!
     var quoteView: QuoteView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        quoteView = QuoteView(frame: viewForQuoteView.bounds)
+        quoteView = QuoteView(frame: builderView.bounds)
         quoteView.configureWithRandomQuoteAndImage()
         
-        viewForQuoteView.addSubview(quoteView)
+        builderView.insertSubview(quoteView, at: 0)
 
 
         

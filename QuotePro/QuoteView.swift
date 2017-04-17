@@ -40,22 +40,19 @@ class QuoteView: UIView {
 
     func configureWithRandomQuoteAndImage()  {
         NetworkManager.getRandomQuote { quote in
-            DispatchQueue.main.async {
-                self.quote = quote
-                self.quoteLabel.text = quote.text
-                self.authorNameLabel.text = quote.author
+            NetworkManager.getRandomPhoto { photo in
+                DispatchQueue.main.async {
+                    
+                    self.quote = quote
+                    self.quoteLabel.text = quote.text
+                    self.authorNameLabel.text = quote.author
+                    self.photo = photo
+                    self.quoteImageView.image = photo.image
+                    
+                }
             }
-
         }
         
-        NetworkManager.getRandomPhoto { photo in
-            DispatchQueue.main.async {
-                self.photo = photo
-                self.quoteImageView.image = photo.image
-            }
-
-        }
-
     }
     func configureWith(userQuote: UserQuote){
         quoteLabel.text = userQuote.quote.text
