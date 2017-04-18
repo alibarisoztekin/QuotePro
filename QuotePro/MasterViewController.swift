@@ -38,11 +38,11 @@ class MasterViewController: UITableViewController, UserQuoteDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuoteTableViewCell
-        let quoteView = QuoteView(frame: cell.quotePreview.frame)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let quoteView = QuoteView(frame: cell.contentView.frame)
         quoteView.configureWith(userQuote: userQuoteArray[indexPath.row])
-        cell.quotePreview.addSubview(quoteView)
-        quoteView.frame = cell.quotePreview.bounds
+        cell.contentView.addSubview(quoteView)
+        
         return cell
     }
     
